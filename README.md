@@ -4,7 +4,7 @@ Packages the official **Mac RAPTOR Avalonia** build into a proper macOS
 application bundle, so RAPTOR launches by double-clicking instead of by typing
 `dotnet raptor.dll` in a terminal.
 
-[中文说明](#中文说明) · [Download](#install) · [Build](#build-from-source) · [Attribution](#attribution)
+[Download](#install) · [Build](#build-from-source) · [Attribution](#attribution)
 
 > **Unofficial.** This is a community repackaging. It is not affiliated with,
 > endorsed by, or supported by the RAPTOR authors or the Avalonia project.
@@ -253,78 +253,6 @@ to the bundled third-party libraries, which have their own licences.
 
 Official homepage: <https://raptor.martincarlisle.com/> · the statement of
 public-domain status is in its *Acknowledgements* section.
-
----
-
-## 中文说明
-
-把官方 **Mac RAPTOR Avalonia** 版打包成标准的 macOS 应用（`.app`），双击即可运行，
-不需要每次开终端敲 `dotnet raptor.dll`。
-
-> **非官方打包。** 与 RAPTOR 作者及 Avalonia 项目无隶属关系，未获其背书或支持。
-
-**RAPTOR 是什么：** 一个用流程图学习算法思维的教学编程环境，最初由**美国空军学院**
-为教学目的开发，现由 Martin C. Carlisle 维护。按美国空军政策，RAPTOR 属于
-**公有领域（public domain）**，打包和再分发无需授权。注意：它与同名的那个老式
-.NET **反编译器**是两个完全不同的软件。
-
-完整署名见 [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md)，官网
-<https://raptor.martincarlisle.com/>。
-
-### 环境要求
-
-| | |
-| --- | --- |
-| 系统 | macOS 11 Big Sur 及以上 |
-| 架构 | Apple 芯片（arm64） |
-| .NET 运行时 | **8.0**，[从微软下载](https://dotnet.microsoft.com/download/dotnet/8.0) 选 macOS → Arm64 → Runtime |
-| libgdiplus | 处理图片时需要，`brew install mono-libgdiplus` |
-
-```bash
-brew install --cask dotnet-runtime
-brew install mono-libgdiplus
-```
-
-### 安装
-
-**推荐用 `.dmg`：** 从 [Releases](../../releases/latest) 下载
-`RAPTOR-<版本>-macos-arm64.dmg`，双击打开，把 `RAPTOR.app` 拖到窗口里的
-`Applications` 快捷方式上即可。镜像里还放了一份 `READ ME FIRST.txt`，写着运行
-依赖和下面的 Gatekeeper 处理办法。
-
-**也可以下 `.zip`：** 解压后把 `RAPTOR.app` 拖进 `/Applications`。
-
-首次打开若提示 *"Apple 无法验证 RAPTOR.app"*（因为未做代码签名），执行一次：
-
-```bash
-xattr -dr com.apple.quarantine /Applications/RAPTOR.app
-```
-
-### 自行打包
-
-```bash
-git clone https://github.com/NoviceSausage/RAPTOR-macos.git
-cd RAPTOR-macos
-unzip raptor_avalonia.zip -d upstream
-./tools/package-macos.sh upstream/publish --zip --dmg
-```
-
-产物在 `build/` 下：`RAPTOR.app`、可直接上传 Release 的 `.zip`，以及带
-"拖进 Applications" 界面的 `.dmg`（加 `--dmg` 参数生成）。
-
-### 注意事项
-
-- 原版发行包只有 32×32 的 Windows 图标，放大没法用，所以图标是重新绘制的。
-- 打包会删掉 Windows / Linux 的运行时目录和 `.pdb` 调试符号，体积从约 122 MB 降到约 48 MB；
-  需要完整内容时加 `--no-trim`。注意 `runtimes/unix` 必须保留 —— 里面是 macOS 用的
-  `System.Drawing.Common.dll`，删掉会导致启动直接报 `Could not load file or assembly`。
-- 菜单栏应用名可能显示为 "Avalonia Application"：这是 `Avalonia.Controls.dll`
-  里写死的默认值，不读取 `Info.plist`，除非改动上游程序本体否则无法覆盖。
-  Dock 和访达里显示的仍是 RAPTOR。
-- 本仓库的脚本部分采用 MIT 许可；RAPTOR 本体为公有领域，不属于本仓库；
-  其依赖库（Avalonia、SkiaSharp、libgdiplus 等）各自保留原有许可。
-
----
 
 ## Takedown
 
