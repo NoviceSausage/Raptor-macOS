@@ -1,0 +1,29 @@
+# Upstream provenance
+#
+# Everything below describes the third-party RAPTOR distribution this repository
+# packages. It is recorded so a release can be traced back to an exact input.
+#
+# Repackaging is a derivative act. Before publishing releases, confirm that the
+# upstream author's terms permit redistribution of the binary. See
+# THIRD-PARTY-NOTICES.md.
+
+NAME=RAPTOR
+UPSTREAM_VARIANT=Mac RAPTOR Avalonia
+UPSTREAM_RELEASE_DATE=2025-07-10
+UPSTREAM_ARCHIVE=raptor_avalonia.zip
+UPSTREAM_ARCHIVE_BYTES=53218564
+UPSTREAM_ARCHIVE_SHA256=91c005fdb63a7e321d9ca9bb8d772fa8817ecb929f5fd481f604f9856adadee4
+
+# Author / licence.
+# The upstream archive contains no LICENSE/COPYING/README, so the terms come from
+# the official project homepage instead:
+#   "The rest of RAPTOR, by US Air Force policy, is public domain."
+# NClass (GPL) belongs to the Windows-only edition's UML designer and is NOT
+# part of this Avalonia Edition payload, so no GPL obligation attaches here.
+UPSTREAM_APPLICATION=RAPTOR - Flowchart Interpreter
+UPSTREAM_APPLICATION_VERSION=0.10.0001
+UPSTREAM_AUTHOR=Martin C. Carlisle (primary maintainer) and contributors; originally developed by and for the US Air Force Academy
+UPSTREAM_HOMEPAGE=https://raptor.martincarlisle.com/
+UPSTREAM_DOCS=https://raptor.martincarlisle.com/docs/IntroducingRaptor/Introducing_Raptor.shtml
+UPSTREAM_LICENSE=Public domain (US Air Force policy; see official homepage Acknowledgements)
+UPSTREAM_URL=https://raptor.martincarlisle.com/raptor_avalonia.zip

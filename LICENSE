@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 NoviceSausage
+Copyright (c) 2025 NoviceSausage
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,24 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+SCOPE OF THIS LICENSE — READ THIS
+
+The MIT license above covers ONLY the original material authored for this
+repository: the packaging scripts, the launcher source, the icon generator, the
+GitHub Actions workflows, and the documentation.
+
+It does NOT cover RAPTOR itself, nor the third-party libraries bundled with it.
+
+RAPTOR is third-party software redistributed here unmodified as part of a macOS
+application bundle. It is **public domain**: the official project homepage
+states that "the rest of RAPTOR, by US Air Force policy, is public domain", and
+it was originally developed by and for the United States Air Force Academy.
+Public domain imposes no conditions on redistribution; this project claims no
+copyright in it.
+
+The third-party libraries bundled alongside RAPTOR (Avalonia, SkiaSharp,
+HarfBuzzSharp, libgdiplus and others) are NOT public domain and remain under
+their own licences. See THIRD-PARTY-NOTICES.md for the full inventory.
